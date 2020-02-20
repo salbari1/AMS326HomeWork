@@ -1,0 +1,44 @@
+public class Test1{
+	
+	//the equations are the function in terms of x 
+	// there are two because since you take the root while simplifying
+	// you have to take into account the positive and negatives 
+
+	
+	public static double Curve(double x) {
+		double A= Math.pow(x,2);
+		return 1 / (1+ (25 * A));
+	}
+	
+	
+	public static double CurveArea(double x, double y, double n) {
+		 double w = (y - x) / n;
+		//starting midpoint//
+		double total = 0.0;
+		
+
+		
+		for (int a = 0 ; a < n; a++) {
+			double midpoint =x + (w / 2.0) + a * w;
+			//next midpoint//
+			total = total + (Curve(midpoint)) ;
+			// height of current midpoint//
+		}
+		
+		//for loop goes through all the n's (aka the sections)
+		return total *  w ;
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		double x=CurveArea(-1,1,50.0);
+		double bottomarea= 2* 0.0384615;
+		double TotalArea=x-bottomarea;
+		System.out.printf("Total area of the Curve = %.4f %n",TotalArea);
+		
+		
+	}
+
+}
