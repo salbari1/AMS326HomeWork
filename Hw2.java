@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Random;
 
+/* SourceCode for functions multiplyMatrix and multiplyMatrixCell https://www.baeldung.com/java-matrix-multiplication */ 
+
 public class Hw2 {
 	 
 	private static double UniRandom(double min, double max) {
